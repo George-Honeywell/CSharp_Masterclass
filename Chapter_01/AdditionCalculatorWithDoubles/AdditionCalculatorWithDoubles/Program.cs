@@ -21,4 +21,4 @@ Console.WriteLine($"{firstNum} + {secondNum} = {Math.Round(sum, 2)}");
 // Using 'Math.Round()' keeps the output of the calculation to 2 decimal places
 // Without rounding, 15.3 + 13.9 would equal 29.2000000003 (or thereabouts)
 // Doing the same calculation using 'Math.Round()', the sum is 29.2.
-// 'Math.Round(sum, 2)', the 2 limits the result to 2 decimal places
+// 'Math.Round(sum, 2)', the 2 rounds the answer to 2 decimal places
