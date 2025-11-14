@@ -18,3 +18,6 @@ if (!secondNumber)
 int sum = firstNum + secondNum;
 
 Console.WriteLine($"{firstNum} + {secondNum} = {sum}");
+
+// Using 'TryParse' to avoid the application crashing if an incorrect data type is entered just by using 'Parse'
+// 'System.FormatException' is thrown by using 'Parse' if anything other than a whole number is entered
