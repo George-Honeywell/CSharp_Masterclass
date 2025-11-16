@@ -62,7 +62,7 @@ if (questionFiveAnswer == "330")
 else
   Console.WriteLine("Incorrect!");
 
-correctPercentage = Math.Round(((float)playerScore / 5) * 100f, 0);
+correctPercentage = Math.Round((playerScore / 5f) * 100f, 0);
 Console.WriteLine("You finished the quiz!");
 Console.WriteLine("Your score can be seen below.");
 Console.WriteLine($"You scored {playerScore} out of 5, answering {correctPercentage}% questions correctly!");
