@@ -14,7 +14,7 @@ bool isValidNumber = int.TryParse(guess, out int res);
 if(isValidNumber)
 {
   if (res == randomNumber)
-    Console.WriteLine("You guessed coprrectly!");
+    Console.WriteLine("You guessed correctly!");
   else
   {
     Console.WriteLine("Incorrect guess!");
