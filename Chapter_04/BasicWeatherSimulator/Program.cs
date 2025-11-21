@@ -71,6 +71,9 @@
         }
       }
 
+      if (count == 1)
+        return "No common conditions found.";      
+
       return mostCommon;
     }
   }
