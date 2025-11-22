@@ -82,7 +82,7 @@
       
       if (count == 1)
         return "No common conditions found.";
-      if (tieDetected == true)
+      else if (tieDetected == true)
         return "Multiple conditions!";
       else
         return mostCommon;
