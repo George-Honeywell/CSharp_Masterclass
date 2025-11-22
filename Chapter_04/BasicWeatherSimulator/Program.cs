@@ -45,15 +45,18 @@
 
     static string GetMostCommonWeatherCondition(string[] conditions)
     {
-      // TODO
-      // - Include code to return 'No common condition' if each condition only appears once
-      // - Include 'multiple' conditions if the same (or more) condition occurs the same number of times
-
       int count = 0;
+      bool tieDetected = false;
       string mostCommon = conditions[0];
+      string[] processedConditions = new string[conditions.Length];
 
       for (int i = 0; i < conditions.Length; i++)
       {
+        if (conditions[i] == processedConditions[i])
+          continue;
+
+        processedConditions[i] = conditions[i];
+
         int tempCount = 0;
 
         for(int j = 0; j < conditions.Length; j++)
@@ -64,17 +67,25 @@
           }
         }
 
-        if(tempCount > count)
+        if (tempCount > count)
         {
           count = tempCount;
           mostCommon = conditions[i];
+          tieDetected = false;
+        }
+        else if (tempCount == count)
+        {
+          if (conditions[i] != mostCommon)
+            tieDetected = true;
         }
       }
-
+      
       if (count == 1)
-        return "No common conditions found.";      
-
-      return mostCommon;
+        return "No common conditions found.";
+      if (tieDetected == true)
+        return "Multiple conditions!";
+      else
+        return mostCommon;
     }
   }
 }
