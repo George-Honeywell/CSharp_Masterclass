@@ -3,7 +3,7 @@
   internal class Program
   {
     static int[] temperature;
-    static string[] conditions = { "Clear", "Cloudy", "Overcast", "Light Rain", "Heavy Rain", "Foggy", "Snowy" };
+    static string[] conditions = { "Clear", "Cloudy", /*"Overcast", "Light Rain", "Heavy Rain", "Foggy", "Snowy"*/ };
     static string[] weatherConditions;
 
     static void Main(string[] args)
@@ -52,11 +52,6 @@
 
       for (int i = 0; i < conditions.Length; i++)
       {
-        if (conditions[i] == processedConditions[i])
-          continue;
-
-        processedConditions[i] = conditions[i];
-
         int tempCount = 0;
 
         for(int j = 0; j < conditions.Length; j++)
