@@ -2,14 +2,21 @@
 {
   internal class Program
   {
+    static int days = 0;
     static int[] temperature;
     static string[] conditions = { "Clear", "Cloudy", /*"Overcast", "Light Rain", "Heavy Rain", "Foggy", "Snowy"*/ };
     static string[] weatherConditions;
 
     static void Main(string[] args)
     {
-      Console.Write("Enter the number of days to simulate: ");
-      int days = int.Parse(Console.ReadLine());
+      do
+      {
+        Console.Write("Enter the number of days to simulate: ");
+        days = int.Parse(Console.ReadLine());
+
+        if (days <= 0)
+          Console.WriteLine("The number of days needs to be greater than 0.");
+      } while (days <= 0);
 
       temperature = new int[days];
       weatherConditions = new string[days];
@@ -35,12 +42,12 @@
 
     static int GetLowestTemperature()
     {
-      return temperature.Min(); 
+      return temperature.Min();
     }
 
     static double GetAverageTemp()
-    { 
-      return Math.Round(temperature.Average(), 2); 
+    {
+      return Math.Round(temperature.Average(), 2);
     }
 
     static string GetMostCommonWeatherCondition(string[] conditions)
