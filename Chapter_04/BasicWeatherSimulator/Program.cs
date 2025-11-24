@@ -48,7 +48,6 @@
       int count = 0;
       bool tieDetected = false;
       string mostCommon = conditions[0];
-      string[] processedConditions = new string[conditions.Length];
 
       for (int i = 0; i < conditions.Length; i++)
       {
