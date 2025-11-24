@@ -10,15 +10,12 @@ namespace MethodsInClasses
     public string Country { get; set; }
     public int ContactNumber { get; set; }
 
-    private static int Count = 0;
-
     // Default Constructor
     public Customer()
     {
       Name = "<No Name Set>";
       Country = "<No Country Set>";
       ContactNumber = 0;
-      Count++;
     }
 
     // Custom Constructor
@@ -27,7 +24,6 @@ namespace MethodsInClasses
       Name = name;
       Country = country;
       ContactNumber = contactNumber;
-      Count++;
     }
 
     public Customer(string name)
@@ -42,6 +38,17 @@ namespace MethodsInClasses
     {
       Console.WriteLine("--- CUSTOMER DETAILS ---");
       Console.WriteLine($"\tName: {Name}\n\tCountry: {Country}\n\tContact Number: {ContactNumber}\n");
+    }
+
+    // With instances of the class that don't have any information filled out at the time of initialization
+    // we can use another method to fill these out. Constructors are only run once, so the constructor cannot be called again on the same instance
+    // This method can be called on each instance itself
+    // Marked as 'public' so it can be accessed from another class
+    public void SetCustomerDetails(string name, string country, int contactNumber)
+    {
+      Name = name;
+      Country = country;
+      ContactNumber = contactNumber;
     }
   }
 }
