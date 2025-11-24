@@ -4,7 +4,7 @@
   {
     static int days = 0;
     static int[] temperature;
-    static string[] conditions = { "Clear", "Cloudy", /*"Overcast", "Light Rain", "Heavy Rain", "Foggy", "Snowy"*/ };
+    static string[] conditions = { "Clear", "Cloudy", "Overcast", "Light Rain", "Heavy Rain", "Foggy", "Snowy" };
     static string[] weatherConditions;
 
     static void Main(string[] args)
@@ -12,10 +12,14 @@
       do
       {
         Console.Write("Enter the number of days to simulate: ");
-        days = int.Parse(Console.ReadLine());
+        bool isValid = int.TryParse(Console.ReadLine(), out days);
 
-        if (days <= 0)
+        if(!isValid)
+          Console.WriteLine("Incorrect value - please enter a whole number to represent the days.");
+
+        else if (days <= 0)
           Console.WriteLine("The number of days needs to be greater than 0.");
+
       } while (days <= 0);
 
       temperature = new int[days];
