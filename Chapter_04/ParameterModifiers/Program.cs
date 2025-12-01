@@ -12,8 +12,8 @@
 /// 
 /// 'ref' Modifier
 /// Allows us to pass a variable by reference, rather than by value.
-/// As an example, the method below takes in an integer, adds 10 to it, then returns the result. We'd expect to see 'myNumber' return 15
-/// However, myNumber returns 5. This is because the value was only passed by value, leaving the original data untouched.
+/// As an example, the method below takes in an integer, and adds 10. We'd expect to see 'myNumber' return 15
+/// However, myNumber returns 5. This is because the value was only passed by value, therefore the modification only affects the local copy, not the caller's variable
 /// Once the function is finished, the changed value is lost
 /// 
 /// </summary>
