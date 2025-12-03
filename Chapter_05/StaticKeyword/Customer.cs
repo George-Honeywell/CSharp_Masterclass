@@ -6,12 +6,18 @@
     public string Country { get; set; }
     public int ContactNumber { get; set; }
 
+    // Static field to track the amount of instances of the Customer class have been created
+    public static int NumberOfCustomers = 0;
+
     // Default Constructor
     public Customer()
     {
       Name = "<No Name Set>";
       Country = "<No Country Set>";
       ContactNumber = 0;
+
+      // Increase the counter in the constructors 
+      NumberOfCustomers++;
     }
 
     // Custom Constructor
@@ -20,11 +26,14 @@
       Name = name;
       Country = country;
       ContactNumber = contactNumber;
+
+      NumberOfCustomers++;
     }
 
     public Customer(string name)
     {
       Name = name;
+      NumberOfCustomers++;
     }
 
     public void SetCustomerDetails(string name, string country, int contactNum)
@@ -36,7 +45,7 @@
 
     public static void GetCustomerCount()
     {
-      Console.WriteLine("This method is static and therefore can be called without being created by an instance of the Customer object.");
+      Console.WriteLine($"There are a total of {NumberOfCustomers} Customer Record(s) in the database.");
     }
   }
 }
