@@ -29,11 +29,17 @@
         int userChoice = GetUserChoice();
         if (question.IsCorrect(userChoice))
         {
-          Console.WriteLine("Correct!");
+          Console.ForegroundColor = ConsoleColor.Green;
+          Console.WriteLine("Correct!\n");
+          Console.ResetColor();
           _score++;
         }
         else
-          Console.WriteLine("Incorrect :(");
+        {
+          Console.ForegroundColor = ConsoleColor.Red;
+          Console.WriteLine("Incorrect :(\n");
+          Console.ResetColor();
+        }
       }
 
       DisplayQuizResults();
