@@ -3,9 +3,11 @@
   internal class Quiz
   {
     private Questions[] _questions;
+    private int _score;
 
     public Quiz(Questions[] questions)
     {
+      _score = 0;
       // The 'this' keyword refers to the current instance of a class
       // 'this.questions' explicitly refers to the instance field, while 'questions' alone refers to the methods parameter.
       // Without using 'this', the compiler assumes the parameter is being used, not the field
@@ -26,12 +28,16 @@
 
         int userChoice = GetUserChoice();
         if (question.IsCorrect(userChoice))
+        {
           Console.WriteLine("Correct!");
+          _score++;
+        }
         else
           Console.WriteLine("Incorrect :(");
       }
-    }
-    
+
+      DisplayQuizResults();
+    }    
 
     private void DisplayQuestion(Questions question)
     {
@@ -44,7 +50,16 @@
         Console.Write(i+1);
         Console.ResetColor();
         Console.WriteLine($". {question.Answers[i]}");
-      }     
+      }
+    }
+
+    private void DisplayQuizResults()
+    {
+      double percentage = ((double)_score / _questions.Length) * 100;
+
+      Console.WriteLine("Quiz finished! See below for your results!");
+      Console.WriteLine($"\tFinal Score: {_score} out of {_questions.Length}.");
+      Console.WriteLine($"\tPercent Correct: {percentage}%");
     }
 
     private int GetUserChoice()

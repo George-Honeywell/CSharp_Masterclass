@@ -23,7 +23,7 @@
       };
 
       Quiz quiz = new Quiz(question);
-      quiz.StartQuiz();      
+      quiz.StartQuiz();
     }
   }
 }
