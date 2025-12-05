@@ -11,5 +11,10 @@
       // Without using 'this', the compiler assumes the parameter is being used, not the field
       this.questions = questions;
     }
+
+    public void DisplayQuestion(Questions question)
+    {
+      Console.WriteLine(question.Question);
+    }
   }
 }
