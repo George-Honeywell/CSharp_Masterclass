@@ -24,6 +24,26 @@
         Console.ResetColor();
         Console.WriteLine($". {question.Answers[i]}");
       }
+
+      if (GetUserChoice() == question.AnswerIndex)
+        Console.WriteLine("Correct!");
+      else
+        Console.WriteLine("Incorrect!");
+      
+    }
+
+    private int GetUserChoice()
+    {
+      Console.Write("Input a number as your answer: ");
+      string answer = Console.ReadLine();
+      int choice = 0;
+      while(!int.TryParse(answer, out choice) || choice < 1 || choice > 4)
+      {
+        Console.WriteLine("Enter a valid choice! Your answer must be between 1, 2, 3, or 4!");
+        answer = Console.ReadLine();
+      }
+
+      return choice - 1;
     }
   }
 }
