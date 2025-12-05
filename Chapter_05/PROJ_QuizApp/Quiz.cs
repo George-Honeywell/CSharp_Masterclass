@@ -2,14 +2,14 @@
 {
   internal class Quiz
   {
-    private Questions[] questions;
+    private Questions[] _questions;
 
     public Quiz(Questions[] questions)
     {
       // The 'this' keyword refers to the current instance of a class
       // 'this.questions' explicitly refers to the instance field, while 'questions' alone refers to the methods parameter.
       // Without using 'this', the compiler assumes the parameter is being used, not the field
-      this.questions = questions;
+      this._questions = questions;
     }
 
     public void StartQuiz()
@@ -19,14 +19,17 @@
 
       int questionNumber = 1;
 
-      foreach (Questions question in questions)
+      foreach (Questions question in _questions)
       {
         Console.Write($"Question {questionNumber++} - ");
         DisplayQuestion(question);
 
         int userChoice = GetUserChoice();
-        if(question.IsCorrect(userChoice))
+        if (question.IsCorrect(userChoice))
+        {
           Console.WriteLine("Correct!");
+          _score++;
+        }
         else
           Console.WriteLine("Incorrect :(");
       }
