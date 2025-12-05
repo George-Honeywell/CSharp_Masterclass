@@ -26,10 +26,7 @@
 
         int userChoice = GetUserChoice();
         if (question.IsCorrect(userChoice))
-        {
           Console.WriteLine("Correct!");
-          _score++;
-        }
         else
           Console.WriteLine("Incorrect :(");
       }
