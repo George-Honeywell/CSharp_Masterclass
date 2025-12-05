@@ -30,7 +30,7 @@
 
     public void GetCustomerId()
     {
-      Console.WriteLine($"The customers unique ID is: {_id}");
+      Console.WriteLine($"The customers unique ID is: {Id}");
     }
   }
 }

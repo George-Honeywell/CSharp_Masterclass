@@ -6,6 +6,7 @@
     {
       Customer ghoneywell = new Customer("George", "Honeywell");
       ghoneywell.GetCustomerId();
+      Console.WriteLine(ghoneywell.Id);
 
       Customer atomline = new Customer("Andy", "Tomline");
       atomline.GetCustomerId();
