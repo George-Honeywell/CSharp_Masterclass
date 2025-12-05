@@ -6,12 +6,24 @@
     {
       Questions[] question = new Questions[]
       {
-        new Questions("What is the capital of the United Kingdom?",
-        new string[] {"Paris", "London", "Berlin", "Sydney" }, 1)
+        new Questions("In what year was C# first released?",
+        new string[] {"2000", "1993", "1998", "2025" }, 0),
+
+        new Questions("Who develops C#?",
+        new string[] {"Google", "Apple", "Microsoft", "Oracle"}, 2),
+
+        new Questions("What is the file extension for C# files?",
+        new string[] {".py", ".cs", ".cpp", ".txt"}, 1),
+
+        new Questions("What other language is C# similar to?",
+        new string[] {"Java", "C++", "Python", "SQL"}, 0),
+
+        new Questions("Which is the correct syntax for declaring an integer?",
+        new string[] {"int x : 0;", "int x = 0;", "x = 0;", "int x = 0"}, 1)
       };
 
       Quiz quiz = new Quiz(question);
-      quiz.DisplayQuestion(question[0]);      
+      quiz.StartQuiz();      
     }
   }
 }

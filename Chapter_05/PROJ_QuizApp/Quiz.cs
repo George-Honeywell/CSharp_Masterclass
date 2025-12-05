@@ -12,7 +12,28 @@
       this.questions = questions;
     }
 
-    public void DisplayQuestion(Questions question)
+    public void StartQuiz()
+    {
+      Console.WriteLine("Welcome to the C# Quiz!");
+      Console.WriteLine("Written in... well... C#!\n");
+
+      int questionNumber = 1;
+
+      foreach (Questions question in questions)
+      {
+        Console.Write($"Question {questionNumber++} - ");
+        DisplayQuestion(question);
+
+        int userChoice = GetUserChoice();
+        if(question.IsCorrect(userChoice))
+          Console.WriteLine("Correct!");
+        else
+          Console.WriteLine("Incorrect :(");
+      }
+    }
+    
+
+    private void DisplayQuestion(Questions question)
     {
       Console.WriteLine(question.Question);
 
@@ -23,13 +44,7 @@
         Console.Write(i+1);
         Console.ResetColor();
         Console.WriteLine($". {question.Answers[i]}");
-      }
-
-      if (GetUserChoice() == question.AnswerIndex)
-        Console.WriteLine("Correct!");
-      else
-        Console.WriteLine("Incorrect!");
-      
+      }     
     }
 
     private int GetUserChoice()
