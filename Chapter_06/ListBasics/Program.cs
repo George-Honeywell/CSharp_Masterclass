@@ -83,6 +83,26 @@
         "Tomline"
       };
 
+      // -- Sorting a list
+      // Can be used on Strings, Chars, and other data types too
+      List<int> numbers = new List<int>() { 1, 6, 2, 3, 6, 9, 4, 1, 3, 6, 2, 1, 4, 7, 8 };
+
+      Console.Write("'numbers' list before sorting: ");
+      foreach(var number in numbers)
+        Console.Write($"{number}, ");
+
+      // Sorts the List into ascending order
+      Console.Write("\n'numbers' list after sorting: ");
+      numbers.Sort();
+      foreach(var number in numbers)
+        Console.Write($"{number}, ");
+
+      // -- 'FindAll()' Method
+      List<int> numbersTwo = new List<int>() { 47, 3, 89, 22, 61, 14, 76, 95, 8, 33 };
+      List<int> highNumbers = numbersTwo.FindAll(x => x >= 30);
+      Console.Write("\nDisplay numbers 30 or above: ");
+      foreach(var highNumber in highNumbers)
+        Console.Write($"{highNumber}, ");
     }
   }
 }
