@@ -31,6 +31,40 @@
         Console.Write($"{number}, ");
       }
 
+      // --- Delegates ---
+      /*
+       * In C#, a delegate is like a pointer or a reference to a method.
+       * It allows you to pass methods as arguments to other methods,
+       * store them in variables, and call them later.
+       * This is useful when you want your code to be flexible and
+       * able to handle different behaviours that aren't predetermined.       
+       */
+
+      List<int> numbersTwo = new List<int>() { 73, 5, 42, 88, 19, 61, 97, 34, 12, 56 };
+      Predicate<int> isGreaterThanFifty = IsGreaterThanFifty;
+      List<int> greaterThanFifty = numbersTwo.FindAll(isGreaterThanFifty);
+
+      Console.Write("\nPrint 'greaterThanFifty': ");
+      foreach(var num in greaterThanFifty)
+      {
+        Console.Write($"{num}, ");
+      }
+
+      // --- .Any() ---
+      // The '.Any()' method determines whether ANY element of a sequence exists or satisfies a condition
+      // Using the 'Any' method here, we're checking if the list has numbers less than 50
+      bool isLessThanFifty = numbersTwo.Any(x => x < 50);
+
+      if (isLessThanFifty)
+        Console.WriteLine("\nList contains numbers less than 50.");
+      else
+        Console.WriteLine("\nList does not contain numbers less than 50.");
+
+    }
+
+    public static bool IsGreaterThanFifty(int x)
+    {
+      return x > 50;
     }
   }
 }
